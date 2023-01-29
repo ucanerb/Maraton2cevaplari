@@ -17,12 +17,22 @@ import java.util.List;
         @ManyToOne(cascade = CascadeType.ALL)
         private Musteri musteri;
 
-        @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+        @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)//liste olduğu için yoğun veri gelir, tamamlar ama en son yükler
     private List<SiparisKalemi> lstsiparisKalemi;
 
 
     public Siparis(Musteri musteri, List<SiparisKalemi> lstsiparisKalemi) {
         this.musteri = musteri;
         this.lstsiparisKalemi = lstsiparisKalemi;
+    }
+
+    public Siparis(Integer id, Musteri musteri, List<SiparisKalemi> lstsiparisKalemi) {
+        this.id = id;
+        this.musteri = musteri;
+        this.lstsiparisKalemi = lstsiparisKalemi;
+    }
+
+    public Siparis(Integer id) {
+        this.id = id;
     }
 }

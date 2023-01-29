@@ -17,8 +17,9 @@ public class Musteri {
     private String isim;
     private String soyisim;
 
-    @OneToMany(mappedBy = "musteri", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "musteri", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Siparis> siparislst;
+
 
     public Musteri(String isim, String soyisim) {
         this.isim = isim;

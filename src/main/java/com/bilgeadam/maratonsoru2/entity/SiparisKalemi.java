@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
         private Integer id;
 
 
-@OneToOne
+@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Urun urun;
 
     private int siparisAdedi;
